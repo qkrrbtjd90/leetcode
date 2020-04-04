@@ -17,8 +17,6 @@
 
 // The given address is a valid IPv4 address.
 
-//todo Runtime: 48 ms, faster than 91.41% of JavaScript online submissions for Defanging an IP Address.
-//todo Memory Usage: 33.8 MB, less than 100.00% of JavaScript online submissions for Defanging an IP Address.
 //* regex
 const defangIPaddr1 = address => {
   return address.replace(/[.]/g, '[.]');

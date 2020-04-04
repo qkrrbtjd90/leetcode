@@ -28,9 +28,6 @@ const decompressRLElist1 = nums => {
     let freq = nums[i];
     let val = nums[i + 1];
 
-    console.log(freq);
-    console.log(val);
-
     for (let i = 0; i < freq; i += 1) {
       result.push(val);
     }
