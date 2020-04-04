@@ -1,4 +1,4 @@
-//* 1313. Decompress Run-Length Encoded List
+//! 1313. Decompress Run-Length Encoded List
 
 // We are given a list nums of integers representing a list compressed with run-length encoding.
 
