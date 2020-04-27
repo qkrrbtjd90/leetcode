@@ -1,4 +1,4 @@
-// 709. To Lower Case
+//todo 709. To Lower Case
 
 // Implement function ToLowerCase() that has a string parameter str, and returns the same string in lowercase.
 
@@ -13,6 +13,12 @@
 // Example 3:
 // Input: "LOVELY"
 // Output: "lovely"
+
+//! ASCII Table
+// Capital A = 65
+// Capital Z = 90
+// lower a = 97
+// lower z = 122
 
 //* for of
 const toLowerCase1 = str => {
@@ -48,29 +54,29 @@ const toLowerCase1 = str => {
   let result = '';
 
   for (let char of str) {
-    if (alphaObj[char]) result += alphaObj[char]
-    else result += char
+    if (alphaObj[char]) result += alphaObj[char];
+    else result += char;
   }
 
   return result;
 };
 
 //! forEach | split | charCodeAt | fromCharCode
-const toLowerCase2= str => {
+const toLowerCase2 = str => {
   let result = '';
 
   str.split('').forEach((s, idx) => {
     let code = str.charCodeAt(idx);
 
     if (code >= 65 && code < 97) {
-      code += 32
+      code += 32;
     }
 
-    result += String.fromCharCode(code)
-  })
+    result += String.fromCharCode(code);
+  });
 
   return result;
-}
+};
 
 //! split | reduce | charCodeAt | fromCharCode
 const toLowerCase = str => {
@@ -81,9 +87,9 @@ const toLowerCase = str => {
       return prev + String.fromCharCode(32 + code);
     }
 
-    return prev + cv
-  }, '')
-}
+    return prev + cv;
+  }, '');
+};
 
 console.log(toLowerCase('Hello'));
 console.log(toLowerCase('here'));
