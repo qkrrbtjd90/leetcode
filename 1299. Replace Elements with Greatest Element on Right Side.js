@@ -56,7 +56,7 @@ const replaceElements3 = arr => {
   return result;
 };
 
-
+//! for
 const replaceElements = arr => {
   let currMax = arr[arr.length - 1];
   
