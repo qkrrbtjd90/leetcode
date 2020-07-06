@@ -1,5 +1,3 @@
-//* 1323. Maximum 69 Number
-
 // Given a positive integer num consisting only of digits 6 and 9.
 
 // Return the maximum number you can get by changing at most one digit (6 becomes 9, and 9 becomes 6).
@@ -44,11 +42,22 @@ const maximum69Number1 = num => {
 
 //todo replace | toString | Number
 //! replace without regex replaces only the 1st instance
-const maximum69Number = num => {
+const maximum69Number2 = num => {
   let str = num.toString(); // or String()
   let res = str.replace('6', '9');
   
   return Number(res); // or parseInt
+}
+
+//* for | replace | String
+const maximum69Number3 = num => {
+    let str = String(num);
+    
+    for (let i = 0; i < str.length; i++) {        
+        if (str[i] === '6') return str.replace('6', '9'); // need to return so that we can exit of loop
+    }
+    
+    return Number(str);
 }
 
 console.log(maximum69Number(9669))

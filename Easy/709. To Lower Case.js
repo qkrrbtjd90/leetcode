@@ -68,9 +68,7 @@ const toLowerCase2 = str => {
   str.split('').forEach((s, idx) => {
     let code = str.charCodeAt(idx);
 
-    if (code >= 65 && code < 97) {
-      code += 32;
-    }
+    if (code >= 65 && code < 97) code += 32;
 
     result += String.fromCharCode(code);
   });

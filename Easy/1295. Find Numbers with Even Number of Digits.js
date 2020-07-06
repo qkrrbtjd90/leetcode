@@ -1,5 +1,3 @@
-//todo 1295. Find Numbers with Even Number of Digits
-
 // Given an array nums of integers, return how many of them contain an even number of digits.
 
 // Example 1:
@@ -23,33 +21,37 @@
 // 1 <= nums.length <= 500
 // 1 <= nums[i] <= 10^5
 
-
 //* for | String | length | ``
 const findNumbers1 = nums => {
-  let count = 0;
+	let count = 0;
 
-  for (let i = 0; i < nums.length; i++) {
-    // let numLen = String(nums[i]).length; // alternate
-    let numLen = `${nums[i]}`.length //! 
+	for (let i = 0; i < nums.length; i++) {
+		// let numLen = String(nums[i]).length; // alternate
+		let numLen = `${nums[i]}`.length; //!
 
-    if (numLen % 2 === 0) {
-      count++;
-    }
-  }
+		if (numLen % 2 === 0) count++;
+	}
 
-  return count;
+	return count;
 };
 
 //! filter | length | ``
 const findNumbers2 = nums => {
-  return nums.filter(num => `${num}`.length % 2  === 0 ? true : false).length
-}
+	return nums.filter(num => (`${num}`.length % 2 === 0 ? true : false)).length;
+};
 
 //todo reduce | ``
-const findNumbers = nums => {
-  //! why does this have to be pre-increment
-  return nums.reduce((acc, cv) => `${cv}`.length % 2 === 0 ? ++acc : acc, 0)
-}
+const findNumbers3 = nums => {
+	//! why does this have to be pre-increment
+	return nums.reduce((acc, cv) => (`${cv}`.length % 2 === 0 ? ++acc : acc), 0);
+};
+
+//! reduce | log10
+const findNumbers4 = nums =>
+	nums.reduce((acc, x) => (1 === ~~Math.log10(x) % 2 ? acc + 1 : acc), 0);
+
+  //! filter | toString
+const findNumbers = nums => nums.filter(cv => cv.toString().length % 2 === 0).length
 
 console.log(findNumbers([12, 345, 2, 6, 7896]));
 console.log(findNumbers([555, 901, 482, 1771]));
