@@ -16,19 +16,39 @@
 // S and J will consist of letters and have length at most 50.
 // The characters in J are distinct.
 
-//* for | includes
-const numJewelsInStones1 = (j, s) => {
-  const sStones = s.split('');
+const numJewelsInStones = (j, s) => {
   const jStones = j.split('');
-
   let count = 0;
 
   for (let i = 0; i < s.length; i++) {
-    let stone = sStones[i];
+    let stone = s[i];
 
-    if (jStones.includes(stone)) {
-      count++;
-    }
+    if (jStones.includes(stone)) count++
+  }
+
+  return count
+}
+
+console.log(numJewelsInStones('aA', 'aAAbbbb'));
+console.log(numJewelsInStones('z', 'ZZ'));
+
+
+
+
+
+
+
+
+
+//* for | includes
+const numJewelsInStones1 = (j, s) => {
+  const jStones = j.split('');
+  let count = 0;
+
+  for (let i = 0; i < s.length; i++) {
+    let stone = s[i];
+
+    if (jStones.includes(stone)) count++;
   }
 
   return count;
@@ -44,7 +64,7 @@ const numJewelsInStones2 = (j, s) => {
 };
 
 //todo for | has | charAt | new Set
-const numJewelsInStones = (j, s) => {
+const numJewelsInStones4 = (j, s) => {
   const jStones = new Set(j);
   let count = 0;
 

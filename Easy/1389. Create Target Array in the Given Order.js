@@ -1,5 +1,3 @@
-//* 1389. Create Target Array in the Given Order
-
 // Given two arrays of integers nums and index. Your task is to create target array under the following rules:
 
 // Initially target array is empty.
@@ -41,6 +39,42 @@
 // 0 <= nums[i] <= 100
 // 0 <= index[i] <= i
 
+const createTargetArray = (nums, index) => {
+  let result = [];
+
+  for (let i = 0; i < nums.length; i++) {
+    let num = nums[i];
+    let idx = index[i];
+
+    // splice(index, delecount, value)
+    result.splice(idx, 0, num)
+  }
+
+  return result;
+}
+
+console.log(createTargetArray([0, 1, 2, 3, 4], [0, 1, 2, 2, 1]));
+console.log(createTargetArray([1, 2, 3, 4, 0], [0, 1, 2, 3, 0]));
+console.log(createTargetArray([1], [0]));
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 //* for | splice
 const createTargetArray1 = (nums, index) => {
   let result = [];
@@ -48,6 +82,7 @@ const createTargetArray1 = (nums, index) => {
   for (let i = 0; i < nums.length; i++) {
     const num = nums[i];
     const idx = index[i];
+
     result.splice(idx, 0, num);
   }
 
@@ -68,7 +103,7 @@ const createTargetArray2 = (nums, index) => {
 };
 
 //! reduce | concat | splice
-const createTargetArray = (nums, index) => {
+const createTargetArray3 = (nums, index) => {
   return nums.reduce(
     (acc, cv, i) => acc.concat(acc.splice(index[i], 0, cv)),
     [],

@@ -1,5 +1,3 @@
-//* 1281. Subtract the Product and Sum of Digits of an Integer
-
 // Given an integer number n, return the difference between the product of its digits and the sum of its digits.
 
 // Example 1:
@@ -38,12 +36,12 @@ const subtractProductAndSum1 = n => {
 
 //* parseInt | toString | split | for
 const subtractProductAndSum = n => {
-  let numArr = n.toString().split('')
+  let numArr = n.toString().split('') // can use String(n)
   let product = 1;
   let sum = 0;
 
   for (let i = 0; i < numArr.length; i++) {
-    let num = parseInt(numArr[i])
+    let num = parseInt(numArr[i]) // can use Number()
 
     product *= num;
     sum += num;
