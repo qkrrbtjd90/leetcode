@@ -30,7 +30,6 @@
 // Output: 5
 
 // Constraints:
-
 // startTime.length == endTime.length
 // 1 <= startTime.length <= 100
 // 1 <= startTime[i] <= endTime[i] <= 1000
@@ -68,12 +67,13 @@ const busyStudent3 = (startTime, endTime, queryTime) =>
     .length;
 
 //! reduce
-const busyStudent = (startTime, endTime, queryTime) =>
+const busyStudent4 = (startTime, endTime, queryTime) =>
   startTime.reduce(
     (acc, cv, idx) =>
       queryTime >= cv && queryTime <= endTime[idx] ? acc + 1 : acc,
     0,
   );
+
 console.log(busyStudent([1, 2, 3], [3, 2, 7], 4));
 console.log(busyStudent([4], [4], 4));
 console.log(busyStudent([4], [4], 5));
