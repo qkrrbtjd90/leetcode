@@ -5,7 +5,6 @@
 // Return the decimal value of the number in the linked list.
 
 // Example 1:
-
 // 1 -> 0 -> 1
 
 // Input: head = [1,0,1]

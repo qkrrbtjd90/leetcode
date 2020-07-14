@@ -1,5 +1,3 @@
-// 1252. Cells with Odd Values in a Matrix
-
 // Given n and m which are the dimensions of a matrix initialized by zeros and given an array indices where indices[i] = [ri, ci].For each pair of[ri, ci] you have to increment all cells in row ri and column ci by 1.
 
 // Return the number of cells with odd values in the matrix after applying the increment to all indices.
@@ -24,18 +22,20 @@
 // 0 <= indices[i][1] < m
 
 const oddCells = (n, m, indicies) => {
-  
+  let matrix = new Array(n).fill(new Array(m).fill(0));
+
+  return matrix;
 };
 
 console.log(
-  oddCells([
+  oddCells(2, 3, [
     [0, 1],
     [1, 1],
   ]),
 );
 
 console.log(
-  oddCells([
+  oddCells(2, 2, [
     [1, 1],
     [0, 0],
   ]),
