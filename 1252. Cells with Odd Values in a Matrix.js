@@ -21,22 +21,33 @@
 // 0 <= indices[i][0] < n
 // 0 <= indices[i][1] < m
 
-const oddCells = (n, m, indicies) => {
-  let matrix = new Array(n).fill(new Array(m).fill(0));
+const oddCells = (n, m, indices) => {
+	let matrix = new Array(n).fill(new Array(m).fill(0));
 
-  return matrix;
+	for (let i = 0; i < indices.length; i++) {
+    for (let j = 0; j < indices[i].length; j++) {
+      let row = matrix[i];
+      let col = row[j];
+
+      
+
+      console.log(col)
+    }
+	}
+
+	return matrix;
 };
 
 console.log(
-  oddCells(2, 3, [
-    [0, 1],
-    [1, 1],
-  ]),
+	oddCells(2, 3, [
+		[0, 1],
+		[1, 1],
+	])
 );
 
-console.log(
-  oddCells(2, 2, [
-    [1, 1],
-    [0, 0],
-  ]),
-);
+// console.log(
+//   oddCells(2, 2, [
+//     [1, 1],
+//     [0, 0],
+//   ]),
+// );
