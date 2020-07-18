@@ -25,45 +25,45 @@
 
 //! while
 const minTimeToVisitAllPoints = points => {
-	let count = 0;
-	let i = 0;
+  let count = 0;
+  let i = 0;
 
-	while (i < points.length - 1) {
-		const [x1, y1] = points[i];
-		const [x2, y2] = points[i + 1];
+  while (i < points.length - 1) {
+    const [x1, y1] = points[i];
+    const [x2, y2] = points[i + 1];
 
-		// find the distance; then return the maximum distance between the two
-		count += Math.max(Math.abs(x2 - x1), Math.abs(y2 - y1));
+    // find the distance; then return the maximum distance between the two
+    count += Math.max(Math.abs(x2 - x1), Math.abs(y2 - y1));
 
-		i++;
-	}
+    i++;
+  }
 
-	return count;
+  return count;
 };
 
 //! reduce
 const minTimeToVisitAllPoints2 = points => {
-	return points.reduce((acc, [x, y], idx) => {
-		return idx === points.length - 1
-			? acc
-			: acc +
-					Math.max(
-						Math.abs(x - points[idx + 1][0]),
-						Math.abs(y - points[idx + 1][1])
-					);
-	}, 0);
+  return points.reduce((acc, [x, y], idx) => {
+    return idx === points.length - 1
+      ? acc
+      : acc +
+          Math.max(
+            Math.abs(x - points[idx + 1][0]),
+            Math.abs(y - points[idx + 1][1])
+          );
+  }, 0);
 };
 
 console.log(
-	minTimeToVisitAllPoints([
-		[1, 1],
-		[3, 4],
-		[-1, 0],
-	])
+  minTimeToVisitAllPoints([
+    [1, 1],
+    [3, 4],
+    [-1, 0],
+  ])
 );
 console.log(
-	minTimeToVisitAllPoints([
-		[3, 2],
-		[-2, 2],
-	])
+  minTimeToVisitAllPoints([
+    [3, 2],
+    [-2, 2],
+  ])
 );
