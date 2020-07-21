@@ -9,21 +9,21 @@
 // Example 1:
 // Input: "(()())(())"
 // Output: "()()()"
-// Explanation: 
+// Explanation:
 // The input string is "(()())(())", with primitive decomposition "(()())" + "(())".
 // After removing outer parentheses of each part, this is "()()" + "()" = "()()()".
 
 // Example 2:
 // Input: "(()())(())(()(()))"
 // Output: "()()()()(())"
-// Explanation: 
+// Explanation:
 // The input string is "(()())(())(()(()))", with primitive decomposition "(()())" + "(())" + "(()(()))".
 // After removing outer parentheses of each part, this is "()()" + "()" + "()(())" = "()()()()(())".
 
 // Example 3:
 // Input: "()()"
 // Output: ""
-// Explanation: 
+// Explanation:
 // The input string is "()()", with primitive decomposition "()" + "()".
 // After removing outer parentheses of each part, this is "" + "" = "".
 
@@ -31,3 +31,11 @@
 // S.length <= 10000
 // S[i] is "(" or ")"
 // S is a valid parentheses string
+
+const removeOuterParentheses = s => {
+  
+};
+
+console.log(removeOuterParenthesese('(()())(())'));
+console.log(removeOuterParenthesese('(()())(())(()(()))'));
+console.log(removeOuterParenthesese('()()'));
