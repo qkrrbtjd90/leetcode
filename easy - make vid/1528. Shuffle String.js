@@ -33,24 +33,41 @@
 // 0 <= indices[i] < n
 // All values of indices are unique (i.e. indices is a permutation of the integers from 0 to n - 1).()
 
-const restoreString = (s, indices) => {
+//* for | indexOf
+const restoreString1 = (s, indices) => {
   let result = '';
 
   for (let i = 0; i < indices.length; i++) {
-    let idx = indices[i];
-    let char = s[i];
-
-    result += s[idx]
-
-    // console.log(result[idx])
-    // console.log(char)
+    result += s[indices.indexOf(i)]
   }
 
   return result;
 };
 
-// console.log(restoreString('codeleet', [4, 5, 6, 7, 0, 2, 1, 3]));
+const restoreString = (s, indices) => {
+  let result = [];
+
+  for (let i = 0; i < s.length; i++) {
+    result[indices[i]] = s[i]
+    console.log(result)
+  }
+
+  return result.join('')
+}
+
+//! reduce
+const restoreString3 = (s, indices) => {
+  return indices.reduce((acc, cv, i) => {
+    acc[cv] = s[i]
+
+    return acc;
+  }, []).join('')
+}
+
+
+
+console.log(restoreString('codeleet', [4, 5, 6, 7, 0, 2, 1, 3]));
 // console.log(restoreString('abc', [0, 1, 2]));
 // console.log(restoreString('aiohn', [3, 1, 4, 2, 0]));
 // console.log(restoreString('aaiougrt', [4, 0, 2, 6, 7, 3, 1, 5]));
-console.log(restoreString('art', [1, 0, 2]));
+// console.log(restoreString('art', [1, 0, 2]));

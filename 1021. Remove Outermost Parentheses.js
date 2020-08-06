@@ -33,7 +33,7 @@
 // S is a valid parentheses string
 
 const removeOuterParentheses = s => {
-  
+  let stack = [];
 };
 
 console.log(removeOuterParenthesese('(()())(())'));
