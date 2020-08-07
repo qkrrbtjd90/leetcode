@@ -32,10 +32,59 @@
 // S[i] is "(" or ")"
 // S is a valid parentheses string
 
-const removeOuterParentheses = s => {
-  let stack = [];
+const removeOuterParentheses1 = s => {
+	let result = [];
+	let stack = [];
+	let counter = 0;
+
+	for (let i = 0; i < s.length; i++) {
+		if (s[i] === '(') {
+			stack.push(s[i]);
+			counter++;
+		} else if (s[i] === ')') {
+			stack.push(s[i]);
+			counter--;
+		}
+
+		if (counter === 0) {
+			result.push(stack.slice(1, stack.length - 1));
+			stack = [];
+		}
+	}
+
+	return result.join('').replace(/(,)/g, '');
 };
 
-console.log(removeOuterParenthesese('(()())(())'));
-console.log(removeOuterParenthesese('(()())(())(()(()))'));
-console.log(removeOuterParenthesese('()()'));
+const removeOuterParentheses = s => {
+	let result = '';
+	let counter = 1;
+
+	for (let i = 1; i < s.length - 1; i++) {
+		if (s[i] == ')') counter--;
+		if (counter > 0) result = result + s[i];
+		if (s[i] == '(') counter++;
+	}
+
+	return result;
+};
+
+const removeOuterParentheses3 = s => {
+	let stack = [];
+	let result = '';
+
+	for (let i = 0; i < s.length; i++) {
+		if (s[i] === '(') {
+			if (stack.length) result += s[i];
+			stack.push(s[i]);
+		} else {
+			stack.pop();
+			if (stack.length) result += s[i];
+		}
+	}
+
+	return result;
+};
+
+console.log(removeOuterParentheses('(()())(())'));
+console.log(removeOuterParentheses('(()())(())(()(()))'));
+console.log(removeOuterParentheses('()()'));
