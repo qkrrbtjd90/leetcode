@@ -28,16 +28,33 @@
 // s[i] only contains digits letters ('0'-'9') and '#' letter.
 // s will be valid string such that mapping is always possible.
 
+
+// 97 = a
+// 122 = z
+// 48 = 0
+// 57 = 9
+
 // charCodeAt
+// need to convert numbered code to utf16 letter
+
 const freqAlphabets = s => {
 	const letters = s.split('#');
+	let result = ''
 
-	return letters;
+	for (let i = 0; i < letters.length; i++) {
+		let char = letters[i];
+
+		console.log(char)
+
+		result += letters.charCodeAt(i)
+	}
+
+	return result;
 };
 
-console.log(freqAlphabets('10#11#12'));
-console.log(freqAlphabets('1326#'));
-console.log(freqAlphabets('25#'));
+// console.log(freqAlphabets('10#11#12'));
+// console.log(freqAlphabets('1326#'));
+// console.log(freqAlphabets('25#'));
 console.log(
 	freqAlphabets('12345678910#11#12#13#14#15#16#17#18#19#20#21#22#23#24#25#26#')
 );

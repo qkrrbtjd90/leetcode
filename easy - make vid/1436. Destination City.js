@@ -50,8 +50,6 @@ const destCity2 = paths => {
 	for (const path of paths) {
 		map.set(path[0], map.has(path[0]) ? 0 : 1);
 		map.set(path[1], map.has(path[1]) ? 0 : -1);
-
-		console.log(map);
 	}
 
 	for (const item of map) {

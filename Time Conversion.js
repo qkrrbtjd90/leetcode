@@ -23,6 +23,6 @@
 // Sample Output 0
 // 19:05:45
 
-const timeConversions(s) => {
+const timeConversions = s => {
   
-}
+};
