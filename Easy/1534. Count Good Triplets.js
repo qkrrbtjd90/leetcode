@@ -26,7 +26,7 @@
 // 0 <= a, b, c <= 1000
 
 //* triple loop || conditions array
-const countGoodTriplets1 = (arr, a, b, c) => {
+const countGoodTriplets = (arr, a, b, c) => {
 	let count = 0;
 
 	for (let i = 0; i < arr.length; i++) {
@@ -48,7 +48,7 @@ const countGoodTriplets1 = (arr, a, b, c) => {
 };
 
 //! doesn't work
-const countGoodTriplets = (arr, a, b, c) => {
+const countGoodTripletsX = (arr, a, b, c) => {
 	let count = 0;
 
 	for (let i = 0; i < arr.length; i++) {
@@ -71,4 +71,4 @@ const countGoodTriplets = (arr, a, b, c) => {
 
 console.log(countGoodTriplets([3, 0, 1, 1, 9, 7], 7, 2, 3));
 console.log(countGoodTriplets([1, 1, 2, 2, 3], 0, 0, 1));
-// console.log(countGoodTriplets([7, 3, 7, 3, 12, 1, 12, 2, 3], 5, 8, 1)); //12
+console.log(countGoodTriplets([7, 3, 7, 3, 12, 1, 12, 2, 3], 5, 8, 1)); //12

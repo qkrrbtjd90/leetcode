@@ -24,7 +24,7 @@
 // Each words[i] will have length in range [1, 12].
 // words[i] will only consist of lowercase letters.
 
-// ASCI II
+// ASCII
 // a = 97
 // z = 122
 
