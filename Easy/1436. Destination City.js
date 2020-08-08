@@ -68,13 +68,13 @@ const destCity3 = paths => {
 };
 
 const destCity = paths => {
-	const to = paths.reduce((acc, [from]) => {
-		acc[from] = true;
+	const map = paths.reduce((acc, [from, to]) => {
+		acc[from] = to;
 
 		return acc;
 	}, {});
 
-	return paths.find(([, outTo]) => !to[outTo])[1];
+	return paths.find(([, to]) => !map[to])[1];
 };
 
 console.log(

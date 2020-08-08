@@ -3,14 +3,12 @@
 // For example, if the array ar = [1,2,3], 1 + 2 + 3 = 6 , so return 6.
 
 // Function Description
-
 // Complete the simpleArraySum function in the editor below. It must return the sum of the array elements as an integer.
 
 // simpleArraySum has the following parameter(s):
-
 // ar: an array of integers
-// Input Format
 
+// Input Format
 // The first line contains an integer, n, denoting the size of the array.
 // The second line contains n space-separated integers representing the array's elements.
 
@@ -30,6 +28,23 @@
 // Explanation
 // We print the sum of the array's elements: 1 + 2 + 3 + 4 + 10 + 11 = 31.
 
+const simpleArraySum = ar => {
+	return ar.reduce((acc, cv) => {
+		return acc + cv
+	}, 0)
+}
+
+console.log(simpleArraySum([1, 2, 3, 4, 10, 11]));
+
+
+
+
+
+
+
+
+
+
 const simpleArraySum1 = ar => {
 	let result = 0;
 
@@ -40,7 +55,7 @@ const simpleArraySum1 = ar => {
 	return result;
 };
 
-const simpleArraySum = ar => {
+const simpleArraySum2 = ar => {
 	return ar.reduce((acc, cv) => {
 		return acc + cv;
 	}, 0);
