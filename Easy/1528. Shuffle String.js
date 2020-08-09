@@ -33,36 +33,6 @@
 // 0 <= indices[i] < n
 // All values of indices are unique (i.e. indices is a permutation of the integers from 0 to n - 1).()
 
-const restoreString = (s, indices) => {
-  return indices.reduce((acc, cv, i) => {
-    acc[cv] = s[i]
-    
-    return acc;
-  }, []).join('')
-}
-
-console.log(restoreString('codeleet', [4, 5, 6, 7, 0, 2, 1, 3]));
-console.log(restoreString('abc', [0, 1, 2]));
-console.log(restoreString('aiohn', [3, 1, 4, 2, 0]));
-console.log(restoreString('aaiougrt', [4, 0, 2, 6, 7, 3, 1, 5]));
-console.log(restoreString('art', [1, 0, 2]));
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
 //* for | indexOf
 const restoreString1 = (s, indices) => {
   let result = '';

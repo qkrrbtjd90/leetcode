@@ -28,23 +28,6 @@
 // Explanation
 // We print the sum of the array's elements: 1 + 2 + 3 + 4 + 10 + 11 = 31.
 
-const simpleArraySum = ar => {
-	return ar.reduce((acc, cv) => {
-		return acc + cv
-	}, 0)
-}
-
-console.log(simpleArraySum([1, 2, 3, 4, 10, 11]));
-
-
-
-
-
-
-
-
-
-
 const simpleArraySum1 = ar => {
 	let result = 0;
 
