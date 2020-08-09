@@ -17,9 +17,8 @@ const replaceElements1 = arr => {
   for (let i = 1; i < arr.length - 1; i++) {
     let newArr = arr.slice(i);
     let max = Math.max(...newArr);
-    let cv = arr[i];
 
-    if (cv <= max) result.push(max);
+    if (arr[i] <= max) result.push(max);
     if (i === arr.length - 1) result.push(-1);
   }
   result.push(-1);

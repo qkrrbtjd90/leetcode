@@ -4,13 +4,12 @@
 // Complete the aVeryBigSum function in the editor below. It must return the sum of all array elements.
 
 // aVeryBigSum has the following parameter(s):
-
 // int ar[n]: an array of integers .
+
 // Return
-
 // int: the sum of all array elements
-// Input Format
 
+// Input Format
 // The first line of the input consists of an integer n.
 // The next line contains n space-separated integers contained in the array.
 
