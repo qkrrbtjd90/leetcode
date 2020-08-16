@@ -11,15 +11,14 @@
 // 1 <= arr[i] <= 10^5
 
 //* for | slice | Math.max()
-const replaceElements1 = arr => {
+const replaceElements = arr => {
   let result = [];
 
-  for (let i = 1; i < arr.length - 1; i++) {
+  for (let i = 1; i < arr.length; i++) {
     let newArr = arr.slice(i);
     let max = Math.max(...newArr);
 
     if (arr[i] <= max) result.push(max);
-    if (i === arr.length - 1) result.push(-1);
   }
   result.push(-1);
 
@@ -54,7 +53,7 @@ const replaceElements3 = arr => {
 };
 
 //! for
-const replaceElements = arr => {
+const replaceElements4 = arr => {
   let currMax = arr[arr.length - 1];
   
   arr[arr.length - 1] = -1;
