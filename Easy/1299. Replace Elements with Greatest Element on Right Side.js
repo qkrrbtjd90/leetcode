@@ -11,12 +11,11 @@
 // 1 <= arr[i] <= 10^5
 
 //* for | slice | Math.max()
-const replaceElements = arr => {
+const replaceElements1 = arr => {
   let result = [];
 
   for (let i = 1; i < arr.length; i++) {
-    let newArr = arr.slice(i);
-    let max = Math.max(...newArr);
+    let max = Math.max(...arr.slice(i));
 
     if (arr[i] <= max) result.push(max);
   }
@@ -27,13 +26,9 @@ const replaceElements = arr => {
 
 //todo for | Math.max() | slice
 const replaceElements2 = arr => {
-  for (let i = 0; i < arr.length; i++) { 
-    let cv = arr[i];
-
-    if (i !== arr.length - 1) {
-      cv = Math.max(...arr.slice(i + 1))
-    }
-    else cv = -1
+  for (let i = 0; i < arr.length; i++) {
+    if (i !== arr.length - 1) arr[i] = Math.max(...arr.slice(i + 1));
+    else arr[i] = -1;
   }
 
   return arr;
@@ -55,16 +50,16 @@ const replaceElements3 = arr => {
 //! for
 const replaceElements4 = arr => {
   let currMax = arr[arr.length - 1];
-  
+
   arr[arr.length - 1] = -1;
 
   for (let i = arr.length - 2; i >= 0; --i) {
     let temp = currMax;
-    let cv = arr[i]
+    let cv = arr[i];
 
-    currMax = currMax < cv ? cv : currMax // or currMax = Math.max(currMax, arr[i])
+    currMax = currMax < cv ? cv : currMax; // or currMax = Math.max(currMax, arr[i])
 
-    arr[i] = temp //! why cv = temp doesn't work
+    arr[i] = temp; //! why cv = temp doesn't work
   }
 
   return arr;

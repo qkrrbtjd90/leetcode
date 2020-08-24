@@ -16,19 +16,6 @@
 // Constraints:
 // 1 <= n <= 1000
 
-//* for | Math.floor
-const sumZero = n => {
-  let result = [];
-
-  if (n % 2 !== 0) result.push(0); // if odd; add 0
-
-  for (let i = 0; i < Math.floor(n / 2); i++) {
-    result.push(n - i, -n + i);
-  }
-
-  return result;
-};
-
 // since range is 1 to n; we start at 1
 const sumZero2 = n => {
   let result = n % 2 !== 0 ? [0] : [];
