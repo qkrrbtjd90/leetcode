@@ -2,9 +2,8 @@
 
 // Example
 // arr=[1,3,5,7,9]
-// The minimum sum is 1+3+5+7 = 16 and the maximum sum is 3+5+7+9 = 24. The function prints
+// The minimum sum is 1+3+5+7 = 16 and the maximum sum is 3+5+7+9 = 24. The function prints 16 24
 
-// 16 24
 
 // Function Description
 // Complete the miniMaxSum function in the editor below.
@@ -12,7 +11,7 @@
 // arr: an array of 5 integers
 
 // Print
-// Print two space-separated integers on one line: the minimum sum and the maximum sum of  of  elements.
+// Print two space-separated integers on one line: the minimum sum and the maximum sum of 4 of 5 elements.
 
 // Input Format
 // A single line of five space-separated integers.
@@ -40,12 +39,10 @@
 
 // Hints: Beware of integer overflow! Use 64-bit Integer.
 
-const miniMaxSum1 = arr => {
+const miniMaxSum = arr => {
 	let sum = 0;
 
-	for (let i = 0; i < arr.length; i++) {
-		let num = arr[i];
-
+	for (const num of arr) {
 		sum += num;
 	}
 
@@ -55,7 +52,12 @@ const miniMaxSum1 = arr => {
 	console.log(min, max);
 };
 
-const minMaxSum = arr => {
+
+
+
+
+
+const miniMaxSum2 = arr => {
 	const sum = arr.reduce((acc, cv) => {
 		return acc + cv;
 	}, 0);
@@ -66,5 +68,5 @@ const minMaxSum = arr => {
 	console.log(min, max);
 };
 
-console.log(minMaxSum([1, 3, 5, 7, 9]));
-console.log(minMaxSum([1, 2, 3, 4, 5]));
+console.log(miniMaxSum([1, 3, 5, 7, 9]));
+console.log(miniMaxSum([1, 2, 3, 4, 5]));

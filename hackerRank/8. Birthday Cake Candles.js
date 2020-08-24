@@ -9,8 +9,8 @@
 // ar: an array of integers representing candle heights
 
 // Input Format
-// The first line contains a single integer, , denoting the number of candles on the cake.
-// The second line contains  space-separated integers, where each integer  describes the height of candle .
+// The first line contains a single integer, n, denoting the number of candles on the cake.
+// The second line contains n space-separated integers, where each integer i describes the height of candle i.
 
 // Constraints
 // 1 <= n <= 10^5
@@ -27,7 +27,7 @@
 // 2
 
 // Explanation 0
-// We have one candle of height , one candle of height , and two candles of height . Your niece only blows out the tallest candles, meaning the candles where . Because there are  such candles, we print  on a new line.
+// We have one candle of height 1, one candle of height 2, and two candles of height 3. Your niece only blows out the tallest candles, meaning the candles where height = 3. Because there are 2 such candles, we print 2 on a new line.
 
 const birthdayCakeCandles1 = ar => {
 	const max = Math.max(...ar);
