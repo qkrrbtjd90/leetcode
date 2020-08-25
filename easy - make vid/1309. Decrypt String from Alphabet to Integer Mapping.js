@@ -28,13 +28,50 @@
 // s[i] only contains digits letters ('0'-'9') and '#' letter.
 // s will be valid string such that mapping is always possible.
 
+// ASCII
 // 97 = a
 // 122 = z
-// 48 = 0
-// 57 = 9
-
-// charCodeAt
 // need to convert numbered code to utf16 letter
+
+
+// const freqAlphabets = s => {
+// 	let result = '';
+
+// 	for (let i = 0; i < s.length; i++) {
+// 		if (s[iing ] === '#') {
+// 			result += String.fromCharCode(96 + Number(s[i] + s[i +st]))ring is not #
+// 		}.1 push c(s[i] !== '#') {
+// 			result += String.fromCharCode(96 + Number(s[i]))
+// 		}
+// 	}
+// 	return result;
+// }
+
+// console.log(freqAlphabets('10#11#12'));
+// console.log(freqAlphabets('1326#'));
+// console.log(freqAlphabets('25#'));
+// console.log(
+// 	freqAlphabets('12345678910#11#12#13#14#15#16#17#18#19#20#21#22#23#24#25#26#')
+// );
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 
 //* 2 for loop
 const freqAlphabets1 = s => {
@@ -58,16 +95,16 @@ const freqAlphabets1 = s => {
 };
 
 //* 1 for loop
-const freqAlphabets2 = s => {
+const freqAlphabets = s => {
 	let result = '';
 
 	for (let i = 0; i < s.length; i++) {
-		console.log(s[i]);
-
 		if (s[i + 2] === '#') {
 			result += String.fromCharCode(96 + Number(s[i] + s[i + 1]));
-		} else if (s[i + 1] !== '#' && s[i] !== '#')
+			i++;
+		} else if (s[i] !== '#') {
 			result += String.fromCharCode(96 + Number(s[i]));
+		}
 	}
 
 	return result;
@@ -150,10 +187,12 @@ const freqAlphabets5 = s => {
 	for (let i = 0; i < s.length; i++) {
 		result += map[s[i + 2] === '#' ? ((i += 2), s[i - 2] + s[i - 1]) : s[i]];
 	}
+
+	return result;
 };
 
 //* Most simple
-const freqAlphabets = s => {
+const freqAlphabets6 = s => {
 	let result = '';
 
 	for (let i = 0; i < s.length; i++) {
