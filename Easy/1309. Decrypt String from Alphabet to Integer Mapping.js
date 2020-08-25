@@ -33,46 +33,6 @@
 // 122 = z
 // need to convert numbered code to utf16 letter
 
-
-// const freqAlphabets = s => {
-// 	let result = '';
-
-// 	for (let i = 0; i < s.length; i++) {
-// 		if (s[iing ] === '#') {
-// 			result += String.fromCharCode(96 + Number(s[i] + s[i +st]))ring is not #
-// 		}.1 push c(s[i] !== '#') {
-// 			result += String.fromCharCode(96 + Number(s[i]))
-// 		}
-// 	}
-// 	return result;
-// }
-
-// console.log(freqAlphabets('10#11#12'));
-// console.log(freqAlphabets('1326#'));
-// console.log(freqAlphabets('25#'));
-// console.log(
-// 	freqAlphabets('12345678910#11#12#13#14#15#16#17#18#19#20#21#22#23#24#25#26#')
-// );
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
 //* 2 for loop
 const freqAlphabets1 = s => {
 	let result = '';
@@ -95,7 +55,7 @@ const freqAlphabets1 = s => {
 };
 
 //* 1 for loop
-const freqAlphabets = s => {
+const freqAlphabet2s = s => {
 	let result = '';
 
 	for (let i = 0; i < s.length; i++) {
@@ -192,7 +152,7 @@ const freqAlphabets5 = s => {
 };
 
 //* Most simple
-const freqAlphabets6 = s => {
+const freqAlphabets = s => {
 	let result = '';
 
 	for (let i = 0; i < s.length; i++) {
