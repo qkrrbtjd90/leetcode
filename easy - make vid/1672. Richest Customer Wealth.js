@@ -64,7 +64,7 @@ const maximumWealth2 = accounts => {
 };
 
 //todo map | reduce | sort
-const maximumWealth = accounts => {
+const maximumWealth3 = accounts => {
 	const totalBalance = accounts.map(account => {
 		return account.reduce((acc, cv) => acc + cv);
 	});
@@ -73,19 +73,49 @@ const maximumWealth = accounts => {
 	return totalBalance[0];
 };
 
-console.log(
-	maximumWealth([
-		[1, 2, 3],
-		[3, 2, 1],
-	])
-);
-console.log(
-	maximumWealth([
-		[1, 5],
-		[7, 3],
-		[3, 5],
-	])
-);
+//! //?
+const maximumWealth4 = accounts => {
+	return accounts.reduce(
+    (p, c) =>
+			Math.max(
+        p,
+				c.reduce((current, prev) => current + prev, 0)
+			),
+		0
+	);
+};
+
+const maximumWealth = accounts => {
+  return accounts.reduce((p, c) => {
+
+    console.log(p)
+    console.log(c)
+
+    Math.max(p, c.reduce((current, prev) => {
+      current + prev
+
+      console.log(p)
+      console.log(current)
+      console.log(prev)
+
+      return current
+    }), 0)
+  })
+}
+
+// console.log(
+// 	maximumWealth([
+// 		[1, 2, 3],
+// 		[3, 2, 1],
+// 	])
+// );
+// console.log(
+// 	maximumWealth([
+// 		[1, 5],
+// 		[7, 3],
+// 		[3, 5],
+// 	])
+// );
 console.log(
 	maximumWealth([
 		[2, 8, 7],
