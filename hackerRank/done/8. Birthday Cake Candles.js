@@ -29,39 +29,6 @@
 // Explanation 0
 // We have one candle of height 1, one candle of height 2, and two candles of height 3. Your niece only blows out the tallest candles, meaning the candles where height = 3. Because there are 2 such candles, we print 2 on a new line.
 
-// 1. declare variable to store max height
-// 2. declare variable to store count of max height candles
-// 3. loop through the array
-// 3.1 if max num is equal to max, increment count 
-// 4. return count
-const birthdayCakeCandles = ar => {
-	let max = Math.max(...ar);
-	let count = 0;
-
-	for (let i = 0; i < ar.length; i++) {
-		if (ar[i] === max) count++;
-	}
-
-	return count;
-}
-
-console.log(birthdayCakeCandles([3, 2, 1, 3]));
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
 const birthdayCakeCandles1 = ar => {
 	const max = Math.max(...ar);
 	let count = 0;
