@@ -66,7 +66,6 @@ const countConsistentStrings2 = (allowed, words) => {
 
 //! new RegExp | filter | test()
 // test() method executes a search for a match between a regular expression and a specified string. Returns true or false
-
 const countConsistentStrings3 = (allowed, words) => {
 	const regex = new RegExp(`^[${allowed}]+$`);
 
@@ -77,7 +76,7 @@ const countConsistentStrings3 = (allowed, words) => {
 const countConsistentStrings4 = (allowed, words) =>
 	(allowedSet =>
 		words.reduce(
-			(acc, curr) => acc + [...curr].every(char => allowedSet.has(char)),
+			(acc, word) => acc + [...word].every(char => allowedSet.has(char)),
 			0
 		))(new Set([...allowed]));
 
