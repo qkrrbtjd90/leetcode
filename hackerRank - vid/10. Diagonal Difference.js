@@ -56,7 +56,20 @@
 
 // Note: |x| is the absolute value of x
 
-const diagonalDifference = arr => {};
+const diagonalDifference = arr => {
+	let sum1 = 0;
+	let sum2 = 0;
+
+	for (let i = 0; i < arr.length; i++) {
+		const first = arr[i][i];
+		const last = arr[i][arr.length - 1 - i];
+
+		sum1 += first;
+		sum2 += last;
+	}
+
+	return Math.abs(sum1 - sum2);
+};
 
 console.log(
 	diagonalDifference([
