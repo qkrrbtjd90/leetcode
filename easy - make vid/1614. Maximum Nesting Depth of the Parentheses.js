@@ -37,11 +37,11 @@
 // It is guaranteed that parentheses expression s is a VPS.
 
 /**
- * @param {string} 
+ * @param {string}
  * @return {number}
  */
 
- // * for | Math.max
+// * for | Math.max
 const maxDepth1 = s => {
 	let depth = 0;
 	let stack = [];
@@ -79,16 +79,16 @@ const maxDepth2 = s => {
 
 //* for | Math.max
 const maxDepth3 = s => {
-  let depth = 0;
-  let count = 0;
+	let depth = 0;
+	let count = 0;
 
-  for (let i = 0; i < s.length; i++) {
-    if (s[i] === '(') depth = Math.max(depth, ++count)
-    else if (s[i] === ')') count--;
-  }
+	for (let i = 0; i < s.length; i++) {
+		if (s[i] === '(') depth = Math.max(depth, ++count);
+		else if (s[i] === ')') count--;
+	}
 
-  return depth;
-}
+	return depth;
+};
 
 //* Match | reduce
 const maxDepth4 = s => {
@@ -99,8 +99,8 @@ const maxDepth4 = s => {
 	if (!str) return l - r;
 
 	return str.reduce((acc, cv) => {
-    cv === '(' ? l++ : r++;
-    
+		cv === '(' ? l++ : r++;
+
 		return Math.max(l - r, acc);
 	}, 0);
 };
@@ -109,15 +109,15 @@ const maxDepth4 = s => {
 // acc accumulates callback's return values; it is the accumulated value previously returned in the last invocation of the ballback
 const maxDepth = s => {
 	const str = s.match(/[(|)]/g, '');
-  let depth = 0;
-  
-  if (!str) return depth;
+	let depth = 0;
 
-  return str.reduce((acc, cv) => {
-    cv === '(' ? depth++ : depth--;
+	if (!str) return depth;
 
-    return Math.max(depth, acc)
-  }, 0)
+	return str.reduce((acc, cv) => {
+		cv === '(' ? depth++ : depth--;
+
+		return Math.max(depth, acc);
+	}, 0);
 };
 
 console.log(maxDepth('(1+(2*3)+((8)/4))+1'));
