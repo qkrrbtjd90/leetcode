@@ -92,7 +92,7 @@ const maxDepth3 = s => {
 
 //* Match | reduce
 const maxDepth4 = s => {
-	const str = s.match(/[(|)]/g, '');
+	const str = s.match(/[()]/g, '');
 	let l = 0;
 	let r = 0;
 
@@ -108,7 +108,7 @@ const maxDepth4 = s => {
 //* Mathch | reduce
 // acc accumulates callback's return values; it is the accumulated value previously returned in the last invocation of the ballback
 const maxDepth = s => {
-	const str = s.match(/[(|)]/g, '');
+	const str = s.match(/[()]/g, '');
 	let depth = 0; // depth is either the depth variable or acc
 
 	if (!str) return depth;
